@@ -1,19 +1,5 @@
-<?php include('../functions.php'); ?>
-<!DOCTYPE html>
-<html>
-<head>
-	<title>Dance Lesson Tracking</title>
-	<link rel="stylesheet" type="text/css" href="../style.css">
-	<style>
-		.header {
-			background: #AC181E;
-		}
-		button[name=register_btn] {
-			background: #AC181E;
-		}
-	</style>
-</head>
-<body>
+<?php include('../model/functions.php'); ?>
+<?php include('../view/header.php'); ?>
 	<div class="header">
 		<h2>Admin - create user</h2>
 	</div>
@@ -50,5 +36,4 @@
 			<button type="submit" class="btn" name="register_btn"> + Create user</button>
 		</div>
 	</form>
-</body>
-</html>
+<?php include('../view/footer.php'); ?>

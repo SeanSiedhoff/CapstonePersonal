@@ -1,32 +1,18 @@
 <?php 
-include('../functions.php');
+include('../model/functions.php');
 
 if (!isAdmin()) {
 	$_SESSION['msg'] = "You must log in first";
-	header('location: ../login.php');
+	header('location: ../view/login.php');
 }
 
 if (isset($_GET['logout'])) {
 	session_destroy();
 	unset($_SESSION['user']);
-	header("location: ../login.php");
+	header("location: ../view/login.php");
 }
 ?>
-<!DOCTYPE html>
-<html>
-<head>
-	<title>Dance Lesson Tracking</title>
-	<link rel="stylesheet" type="text/css" href="../style.css">
-        <script src="https://kit.fontawesome.com/a076d05399.js"></script>
-	<style>
-	.header {
-		background: #AC181E;
-	}
-	button[name=register_btn] {
-		background: #AC181E;
-	}
-	</style>
-</head>
+<?php include('../view/header.php'); ?>
 <body>
 	<div class="header">
 		<h2>Admin - Home Page</h2>
@@ -47,8 +33,6 @@ if (isset($_GET['logout'])) {
 		<!-- logged in user information -->
 		<div class="profile_info">
                         <i class="fas fa-user-cog"></i>
-<!--			<img src="../images/admin_profile.png"  >-->
-
 			<div>
 				<?php  if (isset($_SESSION['user'])) : ?>
 					<strong><?php echo $_SESSION['user']['username']; ?></strong>
@@ -56,7 +40,7 @@ if (isset($_GET['logout'])) {
 					<small>
 						<i  style="color: #888;">(<?php echo ucfirst($_SESSION['user']['user_type']); ?>)</i> 
 						<br>
-						<a href="home.php?logout='1'" style="color: red;">logout</a>
+						<a href="index.php?logout='1'" style="color: red;">logout</a>
                        &nbsp; <a href="create_user.php"> + add user</a>
 					</small>
 
@@ -64,5 +48,4 @@ if (isset($_GET['logout'])) {
 			</div>
 		</div>
 	</div>
-</body>
-</html>
+<?php include('../view/footer.php'); ?>

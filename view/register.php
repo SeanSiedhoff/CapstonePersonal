@@ -1,11 +1,5 @@
-<?php include('functions.php') ?>
-<!DOCTYPE html>
-<html>
-<head>
-	<title>Dance Lesson Tracking</title>
-        <link rel="stylesheet" href="style.css">
-</head>
-<body>
+<?php include('../model/functions.php') ?>
+<?php include('header.php'); ?>
 <div class="header">
 	<h2>Register</h2>
 </div>
@@ -34,5 +28,4 @@
 		Already a member? <a href="login.php">Sign in</a>
 	</p>
 </form>
-</body>
-</html>
+<?php include('footer.php'); ?>

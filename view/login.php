@@ -1,11 +1,5 @@
-<?php include('functions.php') ?>
-<!DOCTYPE html>
-<html>
-    <head>
-        <title>Dance Lesson Tracking</title>
-        <link rel="stylesheet" type="text/css" href="style.css">
-    </head>
-    <body>
+<?php include('../model/functions.php') ?>
+<?php include('header.php'); ?>
         <div class="header">
             <h2>Dance Lesson Tracking</h2>
         </div>
@@ -28,8 +22,4 @@
                 Not yet a member? <a href="register.php">Sign up</a>
             </p>
         </form>
-        <span style="text-decoration: underline;">Username / Password</span><br>
-        Admin / Password123456!<br>
-        User / Password123456!<br>
-    </body>
-</html>
+<?php include('footer.php'); ?>
