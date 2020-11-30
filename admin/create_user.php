@@ -1,4 +1,10 @@
 <?php include('../model/functions.php'); ?>
+<?php
+        if (!isLoggedIn()) {
+	$_SESSION['msg'] = "You must log in first";
+	header('location: ../view/login.php');
+}
+?>
 <?php include('../view/header.php'); ?>
 	<div class="header">
 		<h2>Admin - create user</h2>
