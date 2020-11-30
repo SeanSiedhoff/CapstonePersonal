@@ -2,7 +2,7 @@
 <?php
 if (!isAdmin())
     {
-    $_SESSION['msg'] = "You must log in first";
+    $_SESSION['msg'] = "You must log in as admin first";
     header('location: ../view/login.php');
     }
 ?>
