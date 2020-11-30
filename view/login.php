@@ -21,5 +21,9 @@
     <p>
         <a href="register.php">Sign up</a>
     </p>
+    <br>
+    <p>
+    Username: Admin or User<br>
+    Password: Password123456!</p>
 </form>
 <?php include('footer.php'); ?>
