@@ -16,11 +16,11 @@
 
 		<div class="input-group">
 			<label>Username</label>
-			<input type="text" name="username" value="<?php echo $username; ?>">
+                        <input type="text" name="username" value="<?php echo htmlspecialchars($username); ?>">
 		</div>
 		<div class="input-group">
 			<label>Email</label>
-			<input type="email" name="email" value="<?php echo $email; ?>">
+                        <input type="email" name="email" value="<?php echo htmlspecialchars($email); ?>">
 		</div>
 		<div class="input-group">
 			<label>User type</label>
