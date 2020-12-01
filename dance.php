@@ -1,4 +1,6 @@
 <?php include('view/header.php');?>
+<body>
+    <header></header>
 	<div class="header">
 		<h2>Home Page</h2>
 	</div>

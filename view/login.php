@@ -21,6 +21,7 @@
     <p>
         <a href="register.php">Sign up</a>
     </p>
+    <?php include('copyright.php'); ?>
     <br>
     <p>
     Username: Admin or User<br>
