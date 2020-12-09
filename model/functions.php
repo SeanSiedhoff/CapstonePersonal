@@ -9,7 +9,7 @@ $db = mysqli_connect('localhost', 'root', '', 'capstone_siedhoff');
 $username = "";
 $email    = "";
 $errors   = array();
-
+$users = mysqli_query($db, "SELECT * FROM users WHERE user_type='user'");
 
 // call the register() function if register_btn is clicked
 if (isset($_POST['register_btn']))
@@ -35,7 +35,7 @@ function register() {
         {
         array_push($errors, "Username is required");
         }
-//https://stackoverflow.com/questions/15461765/check-if-username-exist-activated-in-database-using-mysqli
+
     $user_exists = mysqli_query($db, "SELECT * FROM users WHERE username='" . $username . "'");
     if ($user_exists->num_rows)
         {
@@ -48,7 +48,6 @@ function register() {
         array_push($errors, "Email is required");
         }
 
-// (used for email also) https://stackoverflow.com/questions/15461765/check-if-username-exist-activated-in-database-using-mysqli        
     $email_exists = mysqli_query($db, "SELECT * FROM users WHERE email='" . $email . "'");
     if ($email_exists->num_rows)
         {
@@ -59,9 +58,11 @@ function register() {
         {
         array_push($errors, "Password is required");
         }
-       if (!preg_match('/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,12}$/',$password_1)){
-           array_push($errors, "Password requirements are: Minimum 8 and maximum 12 characters, at least one uppercase letter, one lowercase letter, one number and one special character");
-           }
+    //https://stackoverflow.com/questions/19605150/regex-for-password-must-contain-at-least-eight-characters-at-least-one-number-a
+    if (!preg_match('/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,12}$/', $password_1))
+        {
+        array_push($errors, "Password requirements are: Minimum 8 and maximum 12 characters, at least one uppercase letter, one lowercase letter, one number and one special character");
+        }
     if ($password_1 != $password_2)
         {
         array_push($errors, "The two passwords do not match");
@@ -214,3 +215,8 @@ function isAdmin() {
         return false;
         }
 }
+
+
+    
+    
+
