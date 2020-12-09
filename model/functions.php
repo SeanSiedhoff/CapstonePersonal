@@ -59,6 +59,9 @@ function register() {
         {
         array_push($errors, "Password is required");
         }
+       if (!preg_match('/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,12}$/',$password_1)){
+           array_push($errors, "Password requirements are: Minimum 8 and maximum 12 characters, at least one uppercase letter, one lowercase letter, one number and one special character");
+           }
     if ($password_1 != $password_2)
         {
         array_push($errors, "The two passwords do not match");
