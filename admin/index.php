@@ -47,5 +47,20 @@ if (isset($_GET['logout'])) {
 				<?php endif ?>
 			</div>
 		</div>
+                <div class="profile_info">
+                <table>
+                    <tr>
+                        <th>User</th>
+                        <th>Email</th>
+                    </tr>
+                       <?php foreach ($users as $user) : ?>
+                    <tr>
+                    <td><?php echo htmlspecialchars($user['username']); ?></td>
+                    <td><?php echo htmlspecialchars($user['email']); ?></td>
+                    </tr>
+                    
+                    <?php endforeach; ?>
+                </table>
+                    </div>
 	</div>
 <?php include('../view/footer.php'); ?>
