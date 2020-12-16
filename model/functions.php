@@ -10,6 +10,7 @@ $username = "";
 $email    = "";
 $errors   = array();
 $users = mysqli_query($db, "SELECT * FROM users WHERE user_type='user'");
+$dances = mysqli_query($db, "SELECT * FROM dance");
 
 // call the register() function if register_btn is clicked
 if (isset($_POST['register_btn']))
@@ -106,6 +107,15 @@ function getUserById($id) {
 
     $user = mysqli_fetch_assoc($result);
     return $user;
+}
+
+function getDances($id) {
+    global $db;
+    $query  = "SELECT * FROM dance WHERE id=" . $id;
+    $result = mysqli_query($db, $query);
+
+    $dance= mysqli_fetch_assoc($result);
+    return $dance;
 }
 
 // escape string

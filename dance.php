@@ -32,5 +32,30 @@
 				<?php endif ?>
 			</div>
 		</div>
-	</div>
+                <div>
+                <table class="danceTable">
+                    <tr>
+                        <th>Dance</th>
+                        <th>Figure Name</th>
+                        <th>Figure</th>
+                        <th>Foot Positions</th>
+                        <th>Timing</th>
+                        <th>Lead/Follow</th>
+                        <th>Style</th>
+                    </tr>
+                       <?php foreach ($dances as $dance) : ?>
+                    <tr>
+                        <td><?php echo htmlspecialchars($dance['Dance']); ?></td>
+                        <td><?php echo htmlspecialchars($dance['FigureName']); ?></td>
+                        <td><?php echo htmlspecialchars($dance['Fig']); ?></td>
+                        <td><?php echo htmlspecialchars($dance['FP']); ?></td>
+                        <td><?php echo htmlspecialchars($dance['T']); ?></td>
+                        <td><?php echo htmlspecialchars($dance['LF']); ?></td>
+                        <td><?php echo htmlspecialchars($dance['S']); ?></td>
+                    </tr>
+                    
+                    <?php endforeach; ?>
+                </table>
+        	</div>
+        </div>
 <?php include('view/footer.php');?>

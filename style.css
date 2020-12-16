@@ -87,3 +87,7 @@ form, .content {
 	display: block;
 	clear: both;
 }
+.danceTable, .danceTable th, .danceTable td {
+    border: 1px solid black;
+    padding: 10px;
+}
